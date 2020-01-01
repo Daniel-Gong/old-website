@@ -22,6 +22,7 @@ designed by Dongyu Gong for group project of the class DIGITAL MEDIA TECHNOLOGY
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<script src="js/jquery-1.8.2.min.js" type="text/javascript" chartset="utf-8"></script>
 	</head>
 	<body class="homepage">
 
@@ -87,17 +88,17 @@ designed by Dongyu Gong for group project of the class DIGITAL MEDIA TECHNOLOGY
 								区的西部，包括西班牙·葡萄牙、意大利、巴尔干
 								三个半岛，土耳其，小亚西亚及北非地中海沿岸地
 								带 .
-								<br/>
+								<p>.</p>
 								<h3>类型</h3>
 								一个区系植物区
-								<br/>
+								<p>.</p>
 								<h3>概况</h3>
 								地中海区系植物区为北半球植物区中的一个区系植
 								物区。气候是夏季干旱，冬季湿度高，即所谓地中
 								海型气候。由于冰河期有数个陆桥南移，所以植物
 								种类较多，固有种也丰富，特别是科西加、撒丁两
 								岛最为显著。
-								<br/>
+								<p>.</p>
 								<h3>区系主体植物：</h3>
 								1. 硬叶常绿树（栎属 QUERCUS、松属 PINUS）
 								从欧洲西岸北上到达英国<br/>
@@ -117,7 +118,7 @@ designed by Dongyu Gong for group project of the class DIGITAL MEDIA TECHNOLOGY
 					<div id="sidebar" class="4u">
 						<section>
 							<header>
-								<h2>Fetured plants</h2>
+								<h2>Featured plants</h2>
 							</header>
 							<ul class="style">
 								<li>
@@ -171,14 +172,14 @@ designed by Dongyu Gong for group project of the class DIGITAL MEDIA TECHNOLOGY
 								于非洲北部北到地中海，南到苏丹草原。位于阿特
 								拉斯山脉和地中海以南 ( 约北纬 35°线 ), 约北纬
 								14°线 (250 毫米等雨量线 ) 以北。
-								<br/>
+								<p>.</p>
 								<h3>概况</h3>
 								撒哈拉沙漠植被整体来说是稀少的，高地、绿洲洼
 								地和干河床四周散布有成片的青草、灌木和树。在
 								含盐洼地发现有盐土植物 ( 耐盐植物 )。在缺水的
 								平原和撒哈拉沙漠的高原有某些耐热耐旱的青草、
 								草本植物、小灌木和树。
-								<br/>
+								<p>.</p>
 								<h3>区系主体植物：</h3>
 								1. 撒哈拉沙漠高地残遗木本植物中重要的有油橄
 								榄、柏和玛树<br/>
@@ -198,7 +199,7 @@ designed by Dongyu Gong for group project of the class DIGITAL MEDIA TECHNOLOGY
 					<div id="sidebar" class="4u">
 						<section>
 							<header>
-								<h2>Fetured plants</h2>
+								<h2>Featured plants</h2>
 							</header>
 							<ul class="style">
 								<li>
@@ -241,14 +242,14 @@ designed by Dongyu Gong for group project of the class DIGITAL MEDIA TECHNOLOGY
 								雨林横越了 9 个国家：巴西（占森林 60% 面积）、
 								哥伦比亚、秘鲁、委内瑞拉、厄瓜多尔、玻利维亚、
 								圭亚那、苏里南以及法国（法属圭亚那）。
-								<br/>
+								<p>.</p>
 								<h3>概况</h3>
 								亚马逊热带雨林，世界最大的森林，森林茂密，动
 								植物种类繁多，有“世界动植物王国”之称。它
 								占据了世界雨林面积的一半，占全球森林面积的
 								20%，是全球最大及物种最多的热带雨林。亚马
 								逊雨林被人们称为“地球之肺”和“绿色心脏”。
-								<br/>
+								<p>.</p>
 								<h3>区系主体植物：</h3>
 								1、阔叶植物：芭蕉科以及天南星科等，比如野芭蕉<br/>
 								2、板根植物：四树木科的大板根、桑科榕树<br/>
@@ -270,7 +271,7 @@ designed by Dongyu Gong for group project of the class DIGITAL MEDIA TECHNOLOGY
 					<div id="sidebar" class="4u">
 						<section>
 							<header>
-								<h2>Fetured plants</h2>
+								<h2>Featured plants</h2>
 							</header>
 							<ul class="style">
 								<li>
@@ -343,6 +344,18 @@ designed by Dongyu Gong for group project of the class DIGITAL MEDIA TECHNOLOGY
 				Design: <a href="https:\\daniel-gong.github.io">Dongyu Gong</a>
 			</div>
 		</div>
-		
+		<script>
+		$(function(){
+			//一段正则，匹配所有_min.的图片src属性
+			var test = /_min\./
+			//遍历所有的图片节点
+			$("img").each(function(index,obj){	
+			if(test.test($(this).attr("src"))){
+			var reSrc = $(this).attr("src").replace(test,".");
+			$(this).attr("src",reSrc)
+			}	
+			})
+			})
+		</script>
 	</body>
 </html>
